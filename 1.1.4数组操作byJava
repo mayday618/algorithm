@@ -1,0 +1,42 @@
+public class test
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Hello world");
+        int a[]={3,5,6,8,0,7};
+        int max=0;
+        max=max(a);
+        double avg=0.0;
+        System.out.println(max);
+        avg=avg(a);
+        System.out.println(avg);
+        a=reverse(a);
+        for(int i=0;i<a.length;i++)
+            System.out.print(a[i]+" ");
+    }
+    //求和
+    public static int max(int array[]){
+        int max=array[0];
+        for(int i=1;i<array.length;i++)
+            if (max<array[i])
+                max=array[i];
+        return max;
+    }
+    //求平均数
+    public static double avg(int array[]){
+        double avg=0.0;
+        for(int i=0;i<array.length;i++)
+            avg+=array[i];
+        return avg/array.length;
+    }
+    //反转数组
+    public static int[] reverse(int array[]){
+        int tmp=0;
+        for(int i=0;i<array.length/2;i++){
+            tmp=array[i];
+            array[i]=array[array.length-i-1];
+            array[array.length-i-1]=tmp;
+        }
+        return array;
+    }
+}
